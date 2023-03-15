@@ -1,0 +1,47 @@
+<section class="main">
+  <nav [hidden]="!isLoggedIn" class="navbar">
+    <a href="#" class="logo"
+      ><i
+        class="fas fa-book-open"
+        style="font-size: large; color: darkgoldenrod; margin-left: 10px"
+     >
+        Grabbit
+      </i></a
+    >
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn">
+      <span class="nav-icon"> </span>
+    </label>
+    <div class="toggle"></div>
+    <ul class="menu">
+      <li><a href="#" routerLink="/dashboard">Home</a></li>
+
+      <li [hidden]="isLoggedIn"><a href="#" routerLink="/login">Login</a></li>
+      <li [hidden]="!isAdmin"><a href="#" routerLink="/signup">Signup</a></li>
+      <li [hidden]="isAdmin"><a href="#" routerLink="/books">Books</a></li>
+      <li [hidden]="!isLoggedIn"><a href="#" routerLink="/library"><i style="font-size: 30px; margin: 5px; color:black; background-color:linear-gradient(to right, #240b36, #c31432);" class="fas fa-cart-plus"></i></a></li>
+      <li [hidden]="!isLoggedIn"><a href="#" routerLink="/profile"><i style="font-size: 30px; margin: 5px; color:black; background-color:linear-gradient(to right, #240b36, #c31432);" class="fas fa-user"></i></a></li>
+    </ul>
+  </nav>
+  <div class="header-content">
+    <div class="header-text">
+      <h1>
+        There is no Friend
+        <span>As Loyal</span>
+        as a <span>Book</span>
+      </h1>
+      <p>
+        Books are the world's largest repository of knowledge and information.
+        Books have the solutions to every problem and are best friends who will
+        never leave anyone. Reading books from various genres helps us think and
+        analyse in various ways.
+      </p>
+      <a href="#" class="header-btn" routerLink="/dashboard"
+        >Go To Dash Board</a
+      >
+    </div>
+    <div class="header-image">
+      <img src="assets/images/bookillus.jpg" />
+    </div>
+  </div>
+</section>

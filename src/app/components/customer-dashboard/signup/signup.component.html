@@ -1,0 +1,140 @@
+<div class="outer">
+  <div class="container">
+    <div class="row">
+      <div class="offset-md-2 col-lg-5 col-md-7 offset-md-3">
+        <div class="panel border bg-white">
+          <div class="panel-heading">
+            <h3 class="pt-8 font-weight-bold margin-5px">Sign Up</h3>
+          </div>
+          <div class="panel-body p-3">
+            <form [formGroup]="signupForm">
+              <div class="form-group pt-3">
+                <div class="input-field">
+                  <span class="fi fi-ss-user p-2"></span>
+                  <input
+                    formControlName="customername"
+                    type="text"
+                    placeholder="Full Name"
+                  />
+                </div>
+                <small
+                  *ngIf="
+                    signupForm.controls['customername'].dirty &&
+                    signupForm.hasError('required', 'customername')
+                  "
+                  class="text-danger"
+                  >Full name is Required</small
+                >
+              </div>
+              <div class="form-group pt-3">
+                <div class="input-field">
+                  <span class="fas fa-calendar-alt p-2"></span>
+                  <input
+                    formControlName="dateofbirth"
+                    type="text"
+                    placeholder="Date of Birth"
+                  />
+                </div>
+                <small
+                  *ngIf="
+                    signupForm.controls['dateofbirth'].dirty &&
+                    signupForm.hasError('required', 'dateofbirth')
+                  "
+                  class="text-danger"
+                  >Your Birth date is Required</small
+                >
+              </div>
+              <div class="form-group pt-3">
+                <div class="input-field">
+                  <span class="fas fa-at p-2"></span>
+                  <input
+                    formControlName="emailid"
+                    type="text"
+                    placeholder="Email Id"
+                  />
+                </div>
+                <small
+                  *ngIf="
+                    signupForm.controls['emailid'].dirty &&
+                    signupForm.hasError('required', 'emailid')
+                  "
+                  class="text-danger"
+                  >Email id is Required</small
+                >
+              </div>
+
+              <div class="form-group pt-3">
+                <div class="input-field">
+                  <span class="fi fi-ss-lock p-2"></span>
+                  <input
+                    formControlName="password"
+                    [type]="type"
+                    placeholder="Password"
+                  />
+                  <span
+                    (click)="hideShowPass()"
+                    style="margin-right: 10px"
+                  ></span>
+                </div>
+                <small
+                  *ngIf="
+                    signupForm.controls['password'].dirty &&
+                    signupForm.hasError('required', 'password')
+                  "
+                  class="text-danger"
+                  >Password is Required</small
+                >
+              </div>
+              <div class="form-group pt-3">
+                <div class="input-field">
+                  <span class="fa fa-neuter"></span>
+                  Gender :
+                  <input
+                    formControlName="gender"
+                    type="input"
+                    style="margin: 5px"
+                  />
+                </div>
+                <small
+                  *ngIf="
+                    signupForm.controls['gender'].dirty &&
+                    signupForm.hasError('required', 'gender')
+                  "
+                  class="text-danger"
+                  >Gender is Required</small
+                >
+              </div>
+
+              <button
+                (click)="onSignup()"
+                type="submit"
+                class="btn bg-danger text-white mt-5 w-100"
+              >
+                Sign up
+              </button>
+              <div class="text-center pt-5 text-muted">
+                Already have an account ?
+                <a id="forget" routerLink="/login">Login</a>
+              </div>
+            </form>
+          </div>
+          <div class="mx-3 my-2 py bordert">
+            <div class="text-center py-3">
+              <a href="https://www.facebook.com/" class="px-2">
+                <img
+                  src="https://1000logos.net/wp-content/uploads/2016/11/Facebook-logo.png"
+              /></a>
+              <a href="https://www.google.com/" class="px-2">
+                <img src="http://pngimg.com/uploads/google/google_PNG19635.png"
+              /></a>
+              <a href="https://github.com/" class="px-2">
+                <img
+                  src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Symbol.png"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

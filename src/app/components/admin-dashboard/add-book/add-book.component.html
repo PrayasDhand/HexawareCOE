@@ -1,0 +1,38 @@
+<h1 style="text-align: center; color: crimson;">Add new Book</h1>
+<div class="container" style="align-items: center; flex-direction: row;margin: 10px; position: relative;">
+    <form [formGroup]="bookForm">
+
+
+        <mat-form-field appearance="outline" style="border: 5px; align-items: center;">
+            <mat-label>Book id</mat-label>
+            <input formControlName="id" matInput placeholder="Book Id">
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="border: 5px; align-items: center;">
+            <mat-label>Book Name</mat-label>
+            <input formControlName="bookName" matInput placeholder="Book Name">
+            
+            
+          </mat-form-field>
+          <mat-form-field style="margin: 10px;" appearance="outline">
+            <mat-label>Author Name</mat-label>
+            <input formControlName="authorName" matInput placeholder="Author Name">
+            
+            
+          </mat-form-field>
+          <mat-form-field appearance="outline" style="border: 5px; align-items: center;">
+            <mat-label>Price of the Product</mat-label>
+            <input formControlName="price" matInput placeholder="Price">
+            
+            
+          </mat-form-field>
+          <mat-form-field style="margin: 10px;" appearance="outline">
+            <mat-label>Image of The Book</mat-label>
+            <input formControlName="path" matInput placeholder="Image Path">
+            
+            
+          </mat-form-field>
+          
+          <button style="align-items:center; margin-left: 50px;" mat-raised-button color="warn" (click)="addBooks()">{{actionBtn}}</button>
+          <button style="align-items:center; margin-left: 50px;" mat-raised-button color="warn" (click)="buttonClicked()" mat-dialog-close ="Close">Back</button>
+        </form>
+</div>

@@ -1,0 +1,108 @@
+<!-- 
+<section class="main">
+    <nav class="navbar">
+      <a href="#" class="logo"
+        ><i
+          class="fas fa-book-open"
+          style="font-size: large; color: darkgoldenrod; margin-left: 10px"
+        >
+          Grabbit
+        </i></a
+      >
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn">
+        <span class="nav-icon"> </span>
+      </label>
+      <div class="toggle"></div>
+      <ul class="menu">
+        <li><a href="#" routerLink="/dashboard">Home</a></li>
+  
+        <li><a href="#" routerLink="/books">Books</a></li>
+        
+        <li><a href="#" routerLink="/profile">Admin Panel</a></li>
+        
+      </ul>
+    </nav>
+    </section> -->
+
+    <section>
+    
+
+    <mat-toolbar color="red">
+      <button mat-icon-button class="fas fa-menu" aria-label="fas fa-menu">
+        
+      </button>
+      <span style="margin-left: 50px; font-weight: bolder; color:crimson ; font-family: 'Montserrat';">Welcome to Admin Dashboard</span>
+      <span class="example-spacer"></span>
+      <button mat-raised-button color="warn" (click)="openDialog()">
+        Add Book
+        
+      </button>
+      
+    </mat-toolbar>
+    <div class="container-table">
+      <div style="margin-top: 20px;">
+        <mat-form-field>
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+        </mat-form-field>
+        
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource" matSort>
+        
+            <!-- ID Column -->
+            <ng-container matColumnDef="bookId">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Book Id </th>
+              <td mat-cell *matCellDef="let row"> {{row.bookId}} </td>
+            </ng-container>
+        
+            <!-- Progress Column -->
+            <ng-container matColumnDef="bookName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Book Name </th>
+              <td mat-cell *matCellDef="let row"> {{row.bookName}}</td>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="authorName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Author Name </th>
+              <td mat-cell *matCellDef="let row"> {{row.authorName}} </td>
+            </ng-container>
+        
+            <!-- Fruit Column -->
+            <ng-container matColumnDef="price">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> price </th>
+              <td mat-cell *matCellDef="let row"> {{row.price}} </td>
+            </ng-container>
+            <ng-container matColumnDef="path">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Image </th>
+              <td mat-cell *matCellDef="let row"><img src = "{{row.path}}"/> </td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+              <td mat-cell *matCellDef="let row">
+                <i class="fas fa-edit" style="color:darkgreen" (click)="editBook(row)"></i>
+               <button (click)="deleteBook(row.bookId)" style="margin-left: 5px;"> <i class="fas fa-x" style="color:red; margin-left: 3px;"></i></button>
+              </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+          </table>
+        
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        </div>
+        
+        
+      </div>
+    </div>
+
+
+
+    </section>
+    

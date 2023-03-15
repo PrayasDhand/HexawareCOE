@@ -1,0 +1,94 @@
+<div class="outer">
+  <div class="container">
+    <div class="row">
+      <div class="offset-md-2 col-lg-5 col-md-7 offset-md-3">
+        <div class="panel border bg-white">
+          <div class="panel-heading">
+            <h3 class="pt-8 font-weight-bold margin-5px">Login</h3>
+          </div>
+          <form [formGroup]="loginForm">
+          <div class="panel-body p-3">
+            <div class="form-group pt-3">
+              <div class="login-card">
+                <p class="profile-name-card"></p>
+                <form class="form-signin">
+                  <div class="input-field">
+                    <span class="fi fi-ss-user p-2"></span>
+                    <input
+                      #Email
+                      type="email"
+                      
+                      class="form-control"
+                      id="inputEmail"
+                      required
+                      placeholder="Email address"
+                      autofocus
+                    />
+                    <small
+                  *ngIf="
+                    loginForm.controls['emailid'].dirty &&
+                    loginForm.hasError('required', 'emailid')
+                  "
+                  class="text-danger"
+                  >Email id is Required</small>
+                    
+                    <div class="form-group pt-3">
+                      <div class="input-field">
+                        <span class="fi fi-ss-lock p-2"></span>
+                        <input
+                          #PWD
+                          type="password"
+                          class="form-control"
+                          id="inputPassword"
+                          required
+                          placeholder="Password"
+                        />
+                        <small
+                        *ngIf="
+                          loginForm.controls['password'].dirty &&
+                          loginForm.hasError('required', 'password')
+                        "
+                        class="text-danger"
+                        >Password is Required</small
+                      >
+                      </div>
+                    </div>
+                    <div class="form-inline fr mt-3">
+                      <a id="forget" class="font-weight-bold">Forget Password?</a>
+                    </div>
+                    <button
+                      class="btn btn bg-danger text-white mt-5 w-100"
+                      (click)="Login(Email.value, PWD.value)"
+                    >
+                      Log In
+                    </button>
+                  </div>
+                </form>
+                <div class="text-center pt-2 margin-5px text-muted">
+                  Don't have an account ?
+                  <a id="forget" routerLink="/signup">Sign Up</a>
+                </div>
+              </div>
+              <div class="mx-5 mt-5 my-2 py bordert">
+                <div class="text-center py-3">
+                  <a href="https://www.facebook.com/" class="px-2">
+                    <img
+                      src="https://1000logos.net/wp-content/uploads/2016/11/Facebook-logo.png"
+                  /></a>
+                  <a href="https://www.google.com/" class="px-2">
+                    <img src="http://pngimg.com/uploads/google/google_PNG19635.png"
+                  /></a>
+                  <a href="https://github.com/" class="px-2">
+                    <img
+                      src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Symbol.png"
+                  /></a>
+                </div>
+              <style></style>
+            </div>
+          </div>
+        </div>
+      </form>
+      </div>
+    </div>
+</div>
+</div>
