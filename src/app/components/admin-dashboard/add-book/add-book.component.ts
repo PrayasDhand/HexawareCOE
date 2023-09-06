@@ -39,9 +39,7 @@ export class AddBookComponent implements OnInit {
 
       console.log(this.editData);
   }
-  buttonClicked(){
-    alert("Button is working..");
-  }
+  
   
   addBooks(){
     console.log(this.bookForm.value);
