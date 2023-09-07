@@ -24,6 +24,7 @@ import { AddBookComponent } from './components/admin-dashboard/add-book/add-book
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 import { MatSortModule } from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
@@ -58,9 +59,11 @@ import {MatTableModule} from '@angular/material/table';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    ToastrModule.forRoot(),
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    
   ],
 
   providers: [],

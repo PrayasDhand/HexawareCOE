@@ -21,15 +21,15 @@
   </h1>
 </section>
 <section
-  class="booksection"
+  class="box"
   id="books"
   style="
     display: grid;
-    gap: 5rem;
-    grid-template-columns: repeat(auto-fit, minmax(10 rem, 10fr));
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(30 rem, 2fr));
   "
 >
-  <div style="background-color: linear-gradient(to right, #240b36, #c31432)">
+  <div class="box-container" style="background-color: linear-gradient(to right, #240b36, #c31432)">
     <mat-spinner *ngIf="books.length === 0"></mat-spinner>
 
     <mat-card
@@ -37,6 +37,9 @@
       style="
         margin-top: 12px;
         align-items: center;
+        border-width: 5px;
+        border-color:black;
+        
         background: linear-gradient(to right, #240b36, #c31432);
         box-shadow: #240b36;
       "
@@ -46,7 +49,7 @@
           book.bookName
         }}</mat-card-title>
         <mat-card-subtitle
-          style="color: black; font-weight: bolder; margin-left: 20px"
+          style="color: black; font-weight: bolder; margin-left: 30px"
           >{{ book.authorName }}
         </mat-card-subtitle>
       </mat-card-header>

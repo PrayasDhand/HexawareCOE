@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { MatDialog ,MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Validators } from '@angular/forms';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { ToastrService } from 'ngx-toastr';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
@@ -21,7 +22,7 @@ export class AdminDashboardComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
     
-  constructor(private fb:FormBuilder,private router : Router,private ngZone:NgZone,public dialog:MatDialog,private api:ApiService ) {
+  constructor(private fb:FormBuilder,private router : Router,private ngZone:NgZone,public dialog:MatDialog,private api:ApiService,private toastr: ToastrService ) {
     
   }
 
@@ -34,7 +35,7 @@ export class AdminDashboardComponent implements OnInit {
         this.dataSource.sort = this.sort;
       },
       error:(err)=>{
-          alert("error while fetching records");
+        this.toastr.warning('An error occurred...', 'Warning');
       }
     })
   }

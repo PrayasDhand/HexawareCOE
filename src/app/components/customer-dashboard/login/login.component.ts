@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -26,7 +27,8 @@ export class LoginComponent implements OnInit {
   constructor( private fb: FormBuilder,
     private auth: AuthService,
     private router: Router,
-    private http:HttpClient) {}
+    private http:HttpClient,
+    private toastr: ToastrService) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -52,9 +54,13 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('User', JSON.stringify(data));
           //console.log(data.userName=='Admin');return;
           if (data.value.userType == 'Admin') {
+            
+            this.toastr.success('Welcome Admin', 'Success');
             window.location.href = '/admin-dashboard';
+            
           } else {
             window.location.href = '/customer-dashboard';
+            this.toastr.success('Welcome Admin', 'Success');
           }
         }
       });
@@ -80,5 +86,9 @@ export class LoginComponent implements OnInit {
 }
 
 function go(arg0: string) {
+  throw new Error('Function not implemented.');
+}
+
+function showSuccess() {
   throw new Error('Function not implemented.');
 }

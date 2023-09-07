@@ -16,7 +16,7 @@
     <ul class="menu">
       <li><a href="#" routerLink="/dashboard">Home</a></li>
 
-      <li [hidden]="isLoggedIn"><a href="#" routerLink="/login">Login</a></li>
+      <!-- <li [hidden]="isLoggedIn"><a href="#" routerLink="/login">Login</a></li> -->
       <li [hidden]="!isAdmin"><a href="#" routerLink="/signup">Signup</a></li>
       <li [hidden]="isAdmin"><a href="#" routerLink="/books">Books</a></li>
       <li [hidden]="!isLoggedIn"><a href="#" routerLink="/library"><i style="font-size: 30px; margin: 5px; color:black; background-color:linear-gradient(to right, #240b36, #c31432);" class="fas fa-cart-plus"></i></a></li>
