@@ -8,7 +8,7 @@ import { catchError, Observable,throwError ,map} from 'rxjs';
 })
 export class CrudService {
 
-  REST_API:string = "http://localhost:55480/api/";
+  REST_API:string = "http://localhost:5293/api/";
   httpHeaders = new HttpHeaders().set('Content-Type','application/json')
 
 

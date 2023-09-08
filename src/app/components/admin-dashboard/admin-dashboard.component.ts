@@ -62,7 +62,7 @@ export class AdminDashboardComponent implements OnInit {
   }
   deleteBook(bookId:number){
     this.api.deleteBook(bookId).subscribe({next:(res)=>{
-      alert("Deleted Successfully....");
+      this.toastr.success('Deleted Successfully', 'Success');
     },
     error:()=>{
       alert("Error While Deleting...");

@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
     //console.log(param);
     
     this.http
-      .get<any>('http://localhost:55480/api/UserDetails/' + Email + '/' + PWD)
+      .get<any>('http://localhost:5293/api/UserDetails/' + Email + '/' + PWD)
       .subscribe((data) => {
         console.log(data);
 
