@@ -6,7 +6,7 @@
                 <div class="library-product">
                     <table class="table table-response">
                         <thead>
-                            <tr style="border: 3px;">
+                            <tr style="border: 3px; column-span: 4;">
                                 <th>Sr.No</th>
                                 <th>Book Name</th>
                                 <th>Book Image</th>
@@ -30,12 +30,15 @@
                                     <a  class="btn btn-danger" style="margin: 3px;" href ="https://www.amazon.com/kindle-dbs/hz/bookshelf/prime?pf_rd_m=ATVPDKIKX0DER&storeType=ebooks&pageType=STOREFRONT&pf_rd_p=&pf_rd_r=9SM86E8P4ASJYDZPV2E4&pf_rd_s=merchandised-slot-0&pf_rd_t=&ref_=dbs_f_def_rwt_ntry_ms0_kmw_2&pf_rd_i="><i class="fas fa-book-open"></i></a>
                                 </td>
                             </tr>
+                           
                         </tbody>
                        
                     </table>
                     
                 </div>
                 <button style="height: 20px; width: 100px; block-size: 50px; margin: 30px; align-items:center; color: crimson; background-color:black; font-weight: bolder;" routerLink="/books">Add More</button>
+                <button (click)="showSuccess()" style="height: 20px; width: 100px; block-size: 50px; margin: 30px; align-items:center; color: crimson; background-color:black; font-weight: bolder;">Place Order</button>
+
         </div>
         
     </div>

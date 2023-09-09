@@ -20,6 +20,14 @@ export class LibraryService {
   addtoLibrary(book:any): void{
     this.libraryItemList.push(book);
     this.books.next(this.libraryItemList);
+    this.getTotalPrice();
+  }
+  getTotalPrice():number{
+    let grandTotal=0;
+    this.libraryItemList.map((a:any)=>{
+      grandTotal += a.total;
+    })
+    return grandTotal;
   }
   removeLibraryItem(book:any){
     this.libraryItemList.map((a:any , index:any)=>{
