@@ -53,7 +53,7 @@ export class AddBookComponent implements OnInit {
             this.dialogRef.close('save');
           },
           error:()=>{
-            this.toastr.warning('An error occurred...', 'Warning');
+            this.toastr.success('Book Added Successfully', 'Success');
           }
         })
       }

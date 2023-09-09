@@ -1,5 +1,5 @@
 .outer {
-  height: 300vh;
+  height: 500vh;
   background: #c31432; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -440,7 +440,7 @@ nav .menu-btn {
   position: relative;
 }
 .card{
-  height: 250vh;
+  height: 500vh;
   margin: 30px;
   padding: 25px;
   

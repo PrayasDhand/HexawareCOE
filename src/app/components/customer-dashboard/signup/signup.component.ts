@@ -7,7 +7,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -21,7 +21,8 @@ export class SignupComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private auth: AuthService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {}
   ngOnInit(): void {
     this.signupForm = this.fb.group({
@@ -54,7 +55,7 @@ export class SignupComponent implements OnInit {
       });
     } else {
       this.validateAllFormFields(this.signupForm);
-      alert('Please enter all your Credentials .');
+      this.toastr.warning('Please Fill all the Credentials','Warning');
     }
   }
   private validateAllFormFields(formGroup: FormGroup) {
