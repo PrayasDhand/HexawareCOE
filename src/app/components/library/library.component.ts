@@ -17,7 +17,7 @@ export class LibraryComponent implements OnInit {
   constructor(private ls:LibraryService,private toastr : ToastrService) {}
  showSuccess(){
   this.toastr.success("Order placed Successfully","Success");
-  window.location.reload();
+ 
  }
   ngOnInit(): void {
 

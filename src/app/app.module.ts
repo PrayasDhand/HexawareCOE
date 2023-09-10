@@ -28,6 +28,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { MatSortModule } from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
+import { CustomerDashboardComponent } from './components/customer-dashboard/customer-dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,7 @@ import {MatTableModule} from '@angular/material/table';
     HeaderComponent,
     LibraryComponent,
     AddBookComponent,
+    CustomerDashboardComponent
     
    
   ],
